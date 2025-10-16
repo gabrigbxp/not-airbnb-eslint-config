@@ -2,6 +2,36 @@
 
 This package extends (and updates) [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript), integrates with [TypeScript ESLint](https://typescript-eslint.io/), and includes a Prettier configuration for consistent code formatting.
 
+## 🎯 Project Compatibility
+
+This ESLint configuration is designed and tested for:
+
+### ✅ **Fully Supported Projects**
+- **Pure JavaScript/TypeScript projects** (Node.js applications, libraries)
+- **React applications** created with Create React App (CRA)
+- **Next.js projects** (App Router and Pages Router)
+- **Express.js APIs** and Node.js servers
+- **Custom React projects** with standard tooling
+- **TypeScript libraries** and packages
+
+### ⚠️ **May Require Additional Configuration**
+- **Vite projects** - May need custom file pattern configurations
+- **Webpack-based projects** with custom setups
+- **Monorepos** - Require workspace-specific configurations
+- **React Native** - May need platform-specific rule adjustments
+- **Electron applications** - May need renderer/main process distinctions
+
+### ❌ **Not Designed For**
+- **Vue.js projects** (use Vue-specific ESLint configs)
+- **Angular projects** (use Angular ESLint)
+- **Svelte applications** (use Svelte ESLint plugin)
+- **Legacy JavaScript** (ES5 and below)
+
+### 📋 **Requirements**
+- **ESLint** 9.0.0 or higher
+- **Node.js** 16.0.0 or higher
+- **Prettier** 3.0.0 or higher (if using the Prettier config)
+
 ## Contributions
 
 - You can check legacy ESLint rules at [https://eslint.org/docs/latest/rules](https://eslint.org/docs/latest/rules). This page also indicates whether a rule has been replaced or deprecated.
@@ -99,6 +129,28 @@ We **strongly recommend enabling this at the workspace level**, especially durin
   }
 }
 ```
+
+## 🔧 Troubleshooting
+
+#### **Parser Issues with TypeScript**
+If you encounter TypeScript parsing issues, ensure your `tsconfig.json` is properly configured and accessible.
+
+#### **Getting Help**
+If you encounter issues:
+1. Check the [ESLint Config Inspector](#inspect-tool-for-eslint) to see active rules
+2. Open an issue on [GitHub](https://github.com/gabrigbxp/not-airbnb-eslint-config/issues) with your project setup details
+
+## All Rules Configuration
+
+If you want **all rules including style rules** (useful if you're not using Prettier), you can use the `allrules` export:
+
+```js
+import allrules from "not-airbnb-eslint-config/allrules";
+
+export default allrules;
+```
+
+This includes all JavaScript, React, and TypeScript rules, including formatting rules that are normally handled by Prettier.
 
 ## Individual rule sets
 

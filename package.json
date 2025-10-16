@@ -1,6 +1,6 @@
 {
   "name": "not-airbnb-eslint-config",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "ESLint config for React + Typescript projects",
   "keywords": [
     "eslint",
@@ -57,58 +57,23 @@
     "inspect": "eslint --inspect-config --config allrules.mjs"
   },
   "dependencies": {
-    "confusing-browser-globals": "^1.0.11"
-  },
-  "devDependencies": {
+    "confusing-browser-globals": "^1.0.11",
     "@eslint/js": "^9.26.0",
     "@stylistic/eslint-plugin": "^5.4.0",
-    "@types/eslint": "^9.6.1",
-    "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.3",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-n": "^17.17.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "prettier": "^3.3.3",
     "typescript-eslint": "^8.32.0"
   },
-  "peerDependencies": {
-    "eslint": "^9.0.0",
-    "@eslint/js": "^9.0.0",
-    "@stylistic/eslint-plugin": "^5.0.0",
-    "eslint-config-prettier": "^10.0.0",
-    "eslint-plugin-import": "^2.0.0",
-    "eslint-plugin-jsx-a11y": "^6.0.0",
-    "eslint-plugin-n": "^17.0.0",
-    "eslint-plugin-react": "^7.0.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "typescript-eslint": "^8.0.0"
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "eslint": "^9.26.0",
+    "prettier": "^3.3.3"
   },
-  "peerDependenciesMeta": {
-    "@stylistic/eslint-plugin": {
-      "optional": true
-    },
-    "eslint-config-prettier": {
-      "optional": true
-    },
-    "eslint-plugin-import": {
-      "optional": true
-    },
-    "eslint-plugin-jsx-a11y": {
-      "optional": true
-    },
-    "eslint-plugin-n": {
-      "optional": true
-    },
-    "eslint-plugin-react": {
-      "optional": true
-    },
-    "eslint-plugin-react-hooks": {
-      "optional": true
-    },
-    "typescript-eslint": {
-      "optional": true
-    }
+  "peerDependencies": {
+    "eslint": "^9.0.0"
   }
 }
