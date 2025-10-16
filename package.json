@@ -19,10 +19,12 @@
   "type": "module",
   "exports": {
     ".": "./index.mjs",
+    "./allrules": "./allrules.mjs",
     "./prettier": "./prettier.config.js"
   },
   "files": [
     "index.mjs",
+    "allrules.mjs",
     "prettier.config.js",
     "rules/",
     "utils/",
