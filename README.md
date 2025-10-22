@@ -1,114 +1,192 @@
-# Prettier and ESlint config
+# not-airbnb-eslint-config
 
-This package extends (and updates) [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript), integrates with [TypeScript ESLint](https://typescript-eslint.io/), and includes a Prettier configuration for consistent code formatting.
+[![npm version](https://img.shields.io/npm/v/not-airbnb-eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/not-airbnb-eslint-config)
+[![npm downloads](https://img.shields.io/npm/dm/not-airbnb-eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/not-airbnb-eslint-config)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![ESLint](https://img.shields.io/badge/ESLint-9.0+-4B32C3?style=flat-square&logo=eslint)](https://eslint.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Prettier](https://img.shields.io/badge/Prettier-Integrated-F7B93E?style=flat-square&logo=prettier)](https://prettier.io/)
+
+> **A modern, opinionated ESLint config for React + TypeScript projects**
+
+This package extends and updates [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript), integrates seamlessly with [TypeScript ESLint](https://typescript-eslint.io/), and includes a battle-tested Prettier configuration for consistent code formatting.
+
+## ✨ Features
+
+- 🚀 **ESLint 9+** with Flat Config support
+- 📘 **TypeScript** support out of the box
+- ⚛️ **React** rules with hooks and a11y
+- 💅 **Prettier** integration (no conflicts!)
+- 🎯 **Zero config** - works immediately
+- 🔧 **Customizable** - extend or override any rule
+- 📦 **All dependencies included** - no peer dependency headaches
+
+## 📋 Requirements
+
+| Package | Version |
+|---------|---------|
+| Node.js | ≥ 16.0.0 |
+| ESLint | ≥ 9.0.0 |
+| Prettier | ≥ 3.0.0 *(optional)* |
 
 ## 🎯 Project Compatibility
 
-This ESLint configuration is designed and tested for:
+### ✅ Fully Supported
 
-### ✅ **Fully Supported Projects**
-- **Pure JavaScript/TypeScript projects** (Node.js applications, libraries)
-- **React applications** created with Create React App (CRA)
-- **Next.js projects** (App Router and Pages Router)
-- **Express.js APIs** and Node.js servers
-- **Custom React projects** with standard tooling
-- **TypeScript libraries** and packages
+Perfect for these project types:
 
-### ⚠️ **May Require Additional Configuration**
-- **Vite projects** - May need custom file pattern configurations
-- **Webpack-based projects** with custom setups
-- **Monorepos** - Require workspace-specific configurations
-- **React Native** - May need platform-specific rule adjustments
-- **Electron applications** - May need renderer/main process distinctions
+- ✨ **React Applications** (CRA, custom setups)
+- 🔷 **TypeScript Projects** (libraries, apps)
+- ⚡ **Next.js** (App Router & Pages Router)
+- 🚂 **Express.js** & Node.js servers
+- 📚 **JavaScript Libraries** & packages
 
-### ❌ **Not Designed For**
-- **Vue.js projects** (use Vue-specific ESLint configs)
-- **Angular projects** (use Angular ESLint)
-- **Svelte applications** (use Svelte ESLint plugin)
-- **Legacy JavaScript** (ES5 and below)
+### ⚠️ Additional Setup May Be Needed
 
-### 📋 **Requirements**
-- **ESLint** 9.0.0 or higher
-- **Node.js** 16.0.0 or higher
-- **Prettier** 3.0.0 or higher (if using the Prettier config)
+Works with additional configuration:
 
-## Contributions
+- 🔨 **Vite Projects** - may need file pattern adjustments
+- 🔗 **Monorepos** - workspace-specific configs
+- 📱 **React Native** - platform-specific tweaks
+- ⚙️ **Custom Webpack** - tooling-specific rules
 
-- You can check legacy ESLint rules at [https://eslint.org/docs/latest/rules](https://eslint.org/docs/latest/rules). This page also indicates whether a rule has been replaced or deprecated.
-- eslint-plugin-node has been forked and is now maintained as [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n/tree/master/docs/rules)
-- Style formatting use [eslint.style](https://eslint.style/rules)
-- Make sure to use explicit file extensions in import statements (e.g., `import rules from './rules/index.js'`). 
-ESLint follows strict ESM resolution rules and will fail if the extension is omitted, even if the target is an `index.js` file.
+### ❌ Not Designed For
 
-## Inspect tool for ESLint
+- **Vue.js** / **Angular** / **Svelte** (use framework-specific configs)
+- **Legacy ES5** JavaScript
 
-- You can launch the [ESLint Config Inspector](https://github.com/eslint/config-inspector) using either of the following commands:
+## 🚀 Quick Start
+
+### 1. Install the package
 
 ```bash
-npm run inspect
+npm install --save-dev not-airbnb-eslint-config eslint@^9.0.0
 ```
 
-This tool provides a visual overview of all configured rules and options. ([Learn more here](./inspector.md)).
+### 2. Create ESLint config
 
-## Installation and usage
-
-### ESlint
-
-```bash
-npm i -D eslint@^9.0.0
-```
-Then create an `eslint.config.mjs` file in the root of your project:
+Create `eslint.config.js` (or `eslint.config.mjs`) in your project root:
 
 ```js
-import rules from "not-airbnb-eslint-config";
+export { default } from "not-airbnb-eslint-config";
+```
+
+> ⚠️ **Important:** VS Code's ESLint extension currently has better support for `eslint.config.js`. If `eslint.config.mjs` is being ignored, rename it to `eslint.config.js` and ensure your `package.json` has `"type": "module"`.
+
+### 3. Add scripts to package.json
+
+```json
+{
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --fix --ext .ts,.tsx"
+  }
+}
+```
+
+That's it! You're ready to lint. 🎉
+
+## 📦 Usage Options
+
+### Basic Usage
+
+```js
+export { default } from "not-airbnb-eslint-config";
+```
+
+### With Custom Rules
+
+```js
+import config from "not-airbnb-eslint-config";
 
 export default [
-  ...rules,
-  // Add your custom configs below
+  ...config,
+  {
+    rules: {
+      // Your custom rules
+      "no-console": "warn",
+    },
+  },
 ];
 ```
 
-### Prettier
+### All Rules (Including Style)
 
-This package uses `prettier.config.js` with ESM syntax (`export default`). Make sure you're using Prettier version **>=3.0.0**. You can install it with:
+If you're **not using Prettier**, include style rules:
 
-```bash
-npm i -D prettier@^3.0.0
+```js
+export { default } from "not-airbnb-eslint-config/allrules";
 ```
 
-Then you just need to create a file prettier.config.js on your root directory
+### Cherry-Pick Rule Sets
+
+Import only what you need:
+
+```js
+import {
+  bestPractices,
+  errors,
+  react,
+  reactHooks,
+  typescriptCore,
+} from "not-airbnb-eslint-config";
+
+export default [
+  bestPractices,
+  errors,
+  react,
+  reactHooks,
+  typescriptCore,
+];
+```
+
+## 💅 Prettier Integration
+
+### Setup Prettier
+
+**1. Install Prettier**
+
+```bash
+npm install --save-dev prettier@^3.0.0
+```
+
+**2. Create `prettier.config.js`**
 
 ```js
 export { default } from 'not-airbnb-eslint-config/prettier';
 ```
 
-If you want to extend the base config with your own rules, do the following:
+**3. (Optional) Extend with custom rules**
 
 ```js
 import baseConfig from 'not-airbnb-eslint-config/prettier';
 
 export default {
   ...baseConfig,
-  // Add your custom rules below
   semi: true,
   printWidth: 100,
 };
 ```
 
-## Usage on VSCode
+## 🔧 VS Code Setup
 
-### Enable Flat Config
+### 1. Enable Flat Config
 
-The ESLint server may still be expecting the legacy config file format. To enable support for Flat Config, open the settings panel, search for `eslint flat`, and check the **"ESLint: Use Flat Config"** option.  
-We **strongly recommend enabling this at the workspace level**, especially during the transition from ESLint 8.
+ESLint 9 uses a new "Flat Config" format. You might need to enable it in VS Code:
+
+1. Open Settings (`Ctrl+,` / `Cmd+,`)
+2. Search for: `eslint flat`
+3. Check: **"ESLint: Use Flat Config"**
+
+💡 **Tip:** Enable this at workspace level for team consistency.
 
 ![Flat Config setting](./readme/flat-config.png)
 
-### Setting Prettier as the Default Formatter (VS Code)
+> 📝 **Note:** If VS Code doesn't detect your config file, use `eslint.config.js` instead of `eslint.config.mjs`. The extension currently has better compatibility with `.js` files.
 
-1. Open your **workspace settings** (`.vscode/settings.json`), or in the Command Palette: ">Preferences: Open Workspace Settings (JSON)"
+### 2. Configure Prettier (Optional)
 
-2. Add the following:
+Create `.vscode/settings.json` in your project:
 
 ```json
 {
@@ -117,11 +195,17 @@ We **strongly recommend enabling this at the workspace level**, especially durin
 }
 ```
 
-3. Optional: restrict it to certain languages (like TypeScript):
+**Language-specific formatting:**
 
 ```json
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
@@ -130,57 +214,131 @@ We **strongly recommend enabling this at the workspace level**, especially durin
 }
 ```
 
-## 🔧 Troubleshooting
+## 🔧 Inspecting Your Config
 
-#### **Parser Issues with TypeScript**
-If you encounter TypeScript parsing issues, ensure your `tsconfig.json` is properly configured and accessible.
+Launch the **ESLint Config Inspector** to see all active rules:
 
-#### **Getting Help**
-If you encounter issues:
-1. Check the [ESLint Config Inspector](#inspect-tool-for-eslint) to see active rules
-2. Open an issue on [GitHub](https://github.com/gabrigbxp/not-airbnb-eslint-config/issues) with your project setup details
-
-## All Rules Configuration
-
-If you want **all rules including style rules** (useful if you're not using Prettier), you can use the `allrules` export:
-
-```js
-import allrules from "not-airbnb-eslint-config/allrules";
-
-export default allrules;
+```bash
+npm run inspect
 ```
 
-This includes all JavaScript, React, and TypeScript rules, including formatting rules that are normally handled by Prettier.
+This visual tool shows:
+- 📋 All configured rules
+- ⚙️ Rule options and severity
+- 🔍 Which plugins are active
 
-## Individual rule sets
+[Learn more about the inspector](./inspector.md)
 
-You can import named configurations from a single entry point
+## 🐛 Troubleshooting
 
-```ts
-import {
-  bestPractices,
-  errors,
-  es6,
-  imports,
-  node,
-  style,
-  strict,
-  variables,
-  react,
-  reactA11y,
-  reactHooks,
-} from "not-airbnb-eslint-config";
+### Flat Config Not Working
+
+**Problem:** ESLint still looking for `.eslintrc`
+
+**Solution:** 
+1. Delete old `.eslintrc.*` files
+2. Enable Flat Config in VS Code (see [VS Code Setup](#-vs-code-setup))
+3. Restart VS Code
+
+### VS Code Not Detecting Config File
+
+**Problem:** VS Code ESLint extension ignores `eslint.config.mjs`
+
+**Solution:** Rename to `eslint.config.js` and ensure `package.json` has:
+
+```json
+{
+  "type": "module"
+}
 ```
 
-### Note about `javascript/style`
+The VS Code ESLint extension currently has better support for `.js` files over `.mjs` files when using ESM. Both work from the command line, but VS Code may need the `.js` extension specifically.
 
-The `javascript/style` rule set is not included in the default export because formatting is handled by Prettier. If you want to enable style rules, you can import `style` explicitly via the named exports and compose your config. For example:
+### Plugin Conflicts
+
+**Problem:** Rules conflict between ESLint and Prettier
+
+**Solution:** This config includes `eslint-config-prettier` to disable conflicting rules. Make sure you're using the default export, not modifying core formatting rules.
+
+### Getting Help
+
+📝 **Open an issue:** [GitHub Issues](https://github.com/gabrigbxp/not-airbnb-eslint-config/issues)
+
+Please include:
+- Your project type (React, Next.js, etc.)
+- `package.json` dependencies
+- ESLint config file
+- Error messages
+
+## 📚 Available Exports
+
+### Named Rule Sets
+
+All available rule sets you can import individually:
+
+| Export | Description |
+|--------|-------------|
+| `bestPractices` | JavaScript best practices |
+| `errors` | Error detection rules |
+| `es6` | ES6+ features |
+| `imports` | Import/export rules |
+| `node` | Node.js specific rules |
+| `strict` | Strict mode rules |
+| `variables` | Variable declaration rules |
+| `style` | Formatting rules (use if not using Prettier) |
+| `react` | React component rules |
+| `reactA11y` | React accessibility rules |
+| `reactHooks` | React Hooks rules |
+| `typescriptCore` | TypeScript core rules |
+| `typescriptVariables` | TypeScript variable rules |
+| `typescriptBestPractices` | TypeScript best practices |
+
+### Entry Points
+
+| Import | What's Included |
+|--------|-----------------|
+| `not-airbnb-eslint-config` | All rules except `style` (Prettier handles formatting) |
+| `not-airbnb-eslint-config/allrules` | **Everything** including style rules |
+| `not-airbnb-eslint-config/prettier` | Prettier configuration |
+
+### Example: Mix and Match
 
 ```js
-import rules, { style } from "not-airbnb-eslint-config";
+import config, { style, react } from "not-airbnb-eslint-config";
 
 export default [
-  ...rules,
-  style,
+  ...config,
+  style, // Add style rules if not using Prettier
+  {
+    // Override specific React rules
+    rules: {
+      "react/prop-types": "off",
+    },
+  },
 ];
 ```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please check out the [contribution guidelines](./CONTRIBUTING.md).
+
+### Useful Resources
+
+- [ESLint Rules Reference](https://eslint.org/docs/latest/rules)
+- [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n/tree/master/docs/rules) (Node.js rules)
+- [ESLint Stylistic](https://eslint.style/rules) (formatting rules)
+- [TypeScript ESLint](https://typescript-eslint.io/rules/)
+
+## 📄 License
+
+[MIT](./LICENSE) © Gabriel Gustavo Scocozza
+
+---
+
+<div align="center">
+
+**[⭐ Star on GitHub](https://github.com/gabrigbxp/not-airbnb-eslint-config)** | **[📦 View on npm](https://www.npmjs.com/package/not-airbnb-eslint-config)** | **[🐛 Report Bug](https://github.com/gabrigbxp/not-airbnb-eslint-config/issues)**
+
+Made with ❤️ for the JavaScript community
+
+</div>
