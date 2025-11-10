@@ -33,6 +33,7 @@ export default {
             allow: dangleRules[1].allow.concat(['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__']),
         }],
         '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+        '@stylistic/jsx-one-expression-per-line': 'off',
         'class-methods-use-this': ['error', {
             exceptMethods: [
                 'render',
@@ -105,7 +106,7 @@ export default {
             customValidators: [],
             skipUndeclared: false
         }],
-        'react/react-in-jsx-scope': 'error',
+        'react/react-in-jsx-scope': 'off',
         'react/require-render-return': 'error',
         'react/self-closing-comp': 'error',
         'react/sort-comp': ['error', {
@@ -186,7 +187,7 @@ export default {
             skipShapeProps: true,
         }],
         'react/style-prop-object': 'error',
-        'react/no-unescaped-entities': 'error',
+        'react/no-unescaped-entities': 'off',
         'react/no-children-prop': 'error',
         'react/jsx-tag-spacing': ['error', {
             closingSlash: 'never',
@@ -204,8 +205,8 @@ export default {
         'react/boolean-prop-naming': 'off',
         'react/no-typos': 'error',
         'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
-        'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
-        'react/destructuring-assignment': ['error', 'always'],
+        'react/jsx-one-expression-per-line': 'off',
+        'react/destructuring-assignment': 'off',
         'react/no-access-state-in-setstate': 'error',
         'react/button-has-type': 'off',
         'react/jsx-child-element-spacing': 'off',

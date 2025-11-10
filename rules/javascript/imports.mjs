@@ -52,7 +52,7 @@ export default {
     }],
     'import/order': ['error', { groups: [['builtin', 'external', 'internal']] }],
     'import/newline-after-import': 'error',
-    'import/prefer-default-export': 'error',
+    'import/prefer-default-export': 'off',
     'import/no-restricted-paths': 'off',
     'import/max-dependencies': 'off',
     'import/no-absolute-path': 'error',
