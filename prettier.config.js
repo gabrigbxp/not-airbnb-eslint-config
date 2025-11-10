@@ -9,5 +9,6 @@ export default {
     useTabs: false,
     endOfLine: 'lf',
     quoteProps: 'as-needed',
-    jsxSingleQuote: false
+    jsxSingleQuote: false,
+    jsxBracketSameLine: false,
 }
