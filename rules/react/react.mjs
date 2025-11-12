@@ -165,7 +165,7 @@ export default {
             arrow: 'parens-new-line',
             condition: 'parens-new-line',
             logical: 'parens-new-line',
-            prop: 'off',
+            prop: 'ignore',
         }],
         'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
         'react/jsx-equals-spacing': ['error', 'never'],
