@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/not-airbnb-eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/not-airbnb-eslint-config)
 [![npm downloads](https://img.shields.io/npm/dm/not-airbnb-eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/not-airbnb-eslint-config)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![ESLint](https://img.shields.io/badge/ESLint-9.0+-4B32C3?style=flat-square&logo=eslint)](https://eslint.org/)
+[![ESLint](https://img.shields.io/badge/ESLint-9%20%7C%2010-4B32C3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Prettier](https://img.shields.io/badge/Prettier-Integrated-F7B93E?style=flat-square&logo=prettier)](https://prettier.io/)
 
@@ -13,7 +13,7 @@ This package extends and updates [Airbnb's JavaScript style guide](https://githu
 
 ## ✨ Features
 
-- 🚀 **ESLint 9+** with Flat Config support
+- 🚀 **ESLint 9 & 10** with Flat Config support
 - 📘 **TypeScript** support out of the box
 - ⚛️ **React** rules with hooks and a11y
 - 💅 **Prettier** integration (no conflicts!)
@@ -25,8 +25,9 @@ This package extends and updates [Airbnb's JavaScript style guide](https://githu
 
 | Package | Version |
 |---------|---------|
-| Node.js | ≥ 16.0.0 |
-| ESLint | ≥ 9.0.0 |
+| Node.js | ≥ 18.18.0 *(≥ 20.19.0 for ESLint 10)* |
+| ESLint | 9.x or 10.x |
+| [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript) | ≥ 3.0.0 |
 | Prettier | ≥ 3.0.0 *(optional)* |
 
 ## 🎯 Project Compatibility
@@ -60,7 +61,7 @@ Works with additional configuration:
 ### 1. Install the package
 
 ```bash
-npm install --save-dev not-airbnb-eslint-config eslint@^9.0.0
+npm install --save-dev not-airbnb-eslint-config eslint@^9.0.0 eslint-import-resolver-typescript
 ```
 
 ### 2. Create ESLint config
